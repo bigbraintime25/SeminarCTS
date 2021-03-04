@@ -10,8 +10,13 @@ import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
 public class PupilReader extends Reader {
-	public  List<Aplicant> readAplicants(String file) throws FileNotFoundException, NumberFormatException{
-		Scanner input2 = new Scanner(new File(file));
+	public PupilReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
+	public  List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException{
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 

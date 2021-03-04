@@ -13,7 +13,7 @@ public class Program {
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicanti;
 		try {
-			listaAplicanti = UniversalReader.readAplicants("angajati.txt", new EmployeeReader());
+			listaAplicanti = UniversalReader.readAplicants(new EmployeeReader("angajati.txt"));
 			for(Aplicant aplicant:listaAplicanti)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {

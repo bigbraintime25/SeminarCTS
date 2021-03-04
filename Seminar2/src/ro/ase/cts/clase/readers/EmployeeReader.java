@@ -10,8 +10,15 @@ import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
 public class EmployeeReader extends Reader {
-	public  List<Aplicant> readAplicants(String file) throws FileNotFoundException, NumberFormatException {
-		Scanner input2 = new Scanner(new File(file));
+	
+	
+	public EmployeeReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
+	public  List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
