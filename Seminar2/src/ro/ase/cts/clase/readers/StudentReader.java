@@ -14,8 +14,8 @@ public class StudentReader extends Reader {
 		super(fileName);
 		// TODO Auto-generated constructor stub
 	}
-	
-	public  List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException {
+
+	public List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException {
 		Scanner input = new Scanner(new File(super.fileName));
 		input.useDelimiter(",|\n");
 		List<Aplicant> studenti = new ArrayList<Aplicant>();

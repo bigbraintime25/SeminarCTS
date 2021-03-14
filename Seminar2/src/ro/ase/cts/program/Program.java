@@ -19,8 +19,7 @@ public class Program {
 		try {
 			listaAplicanti = UniversalReader.readAplicants(new EmployeeReader("angajati.txt"));
 			Proiect p = new Proiect(80);
-			for(Aplicant aplicant:listaAplicanti)
-			{
+			for (Aplicant aplicant : listaAplicanti) {
 				System.out.println(aplicant.toString());
 				System.out.println(aplicant.getSumaFinantata());
 				aplicant.afisareStatutProiect(p);

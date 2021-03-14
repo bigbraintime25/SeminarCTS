@@ -8,19 +8,15 @@ import ro.ase.cts.clase.Aplicant;
 
 public abstract class Reader {
 	protected String fileName;
-	
-	
-	
+
 	public Reader(String fileName) {
 		super();
 		this.fileName = fileName;
 	}
 
+	public abstract List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException;
 
-
-	public abstract  List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException;
-	
-	public void readAplicant(Aplicant a,Scanner input) {
+	public void readAplicant(Aplicant a, Scanner input) {
 		String nume = input.next();
 		String prenume = (input.next()).toString();
 		int varsta = Integer.valueOf(input.nextInt());
@@ -29,12 +25,12 @@ public abstract class Reader {
 		String[] vect = new String[nr];
 		for (int i = 0; i < nr; i++)
 			vect[i] = input.next();
-		
+
 		a.setNume(nume);
 		a.setPrenume(prenume);
 		a.setVarsta(varsta);
 		a.setPunctaj(punctaj);
 		a.setDenumiriProiecte(nr, vect);
-		
+
 	}
 }

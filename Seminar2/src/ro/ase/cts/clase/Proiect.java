@@ -12,10 +12,4 @@ public class Proiect {
 		return pragAcceptare;
 	}
 
-	public void setPragAcceptare(int pragAcceptare) {
-		this.pragAcceptare = pragAcceptare;
-	}
-	
-	
-	
 }
