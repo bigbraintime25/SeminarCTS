@@ -2,6 +2,7 @@ package ro.ase.cts.program;
 
 import ro.ase.cts.clase.ManagerSpital;
 import ro.ase.cts.clase.ManagerSpitalLazy;
+import ro.ase.cts.clase.Ziar;
 
 public class Main {
 
@@ -21,6 +22,15 @@ public class Main {
 		
 		System.out.println(managerLazy1.toString());
 		System.out.println(managerLazy2.toString());
+		
+		Ziar z1 = Ziar.getInstance("Libertatea", 37, 7.9f);
+		Ziar z2 = Ziar.getInstance("Adevarul", 21, 5.9f);
+		
+		z1.setNrPagini(33);
+		z2.setPret(6.2f);
+		
+		System.out.println(z1.toString());
+		System.out.println(z2.toString());
 	}
 
 }
