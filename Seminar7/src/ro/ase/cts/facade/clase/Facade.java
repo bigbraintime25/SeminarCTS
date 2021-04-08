@@ -1,4 +1,4 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.facade.clase;
 
 public class Facade {
 	public static boolean sePermiteAcces(Persoana persoana, Bilet bilet) {

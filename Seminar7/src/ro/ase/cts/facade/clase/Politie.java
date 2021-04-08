@@ -1,4 +1,4 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.facade.clase;
 
 public class Politie {
 	public static boolean esteUrmarita(Persoana persoana) {

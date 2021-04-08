@@ -1,10 +1,10 @@
-package ro.ase.cts.program;
+package ro.ase.cts.facade.program;
 
-import ro.ase.cts.clase.BazaDateHuligani;
-import ro.ase.cts.clase.Bilet;
-import ro.ase.cts.clase.Facade;
-import ro.ase.cts.clase.Persoana;
-import ro.ase.cts.clase.Politie;
+import ro.ase.cts.facade.clase.BazaDateHuligani;
+import ro.ase.cts.facade.clase.Bilet;
+import ro.ase.cts.facade.clase.Facade;
+import ro.ase.cts.facade.clase.Persoana;
+import ro.ase.cts.facade.clase.Politie;
 
 public class Main {
 

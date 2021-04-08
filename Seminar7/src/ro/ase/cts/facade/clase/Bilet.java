@@ -1,4 +1,4 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.facade.clase;
 
 public class Bilet {
 	private String nume;
