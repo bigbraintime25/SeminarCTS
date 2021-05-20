@@ -30,6 +30,9 @@ public class Student {
     }
 
     public void adaugaNota(int nota){
+    	if(nota <0 || nota>10) {
+    		throw new IllegalArgumentException();
+    	}
         note.add(nota);
     }
 
