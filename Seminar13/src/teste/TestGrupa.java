@@ -2,11 +2,15 @@ package teste;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import clase.Grupa;
+import clase.Student;
 
 public class TestGrupa {
+	
+	
 
 	@Test
 	public void testConstructorRight() {
@@ -47,5 +51,60 @@ public class TestGrupa {
 		Grupa grupa = new Grupa(1076);
 		assertNotNull(grupa.getStudenti());
 	}
+	
+	@Test
+	public void testPromovabilitateRight() {
+		Grupa grupa = new Grupa(1076);
+		for(int i =0;i<7;i++) {
+			Student student = new Student("Gigel" + i);
+			student.adaugaNota(3);
+			student.adaugaNota(4);
+			student.adaugaNota(5);
+			grupa.adaugaStudent(student);
+		}
+		for(int i =0;i<5;i++) {
+			Student student = new Student("Ionel" + i);
+			student.adaugaNota(7);
+			student.adaugaNota(7);
+			student.adaugaNota(8);
+			grupa.adaugaStudent(student);
+		}
+		
+		assertEquals(0.41, grupa.getPromovabilitate(),0.01);
+	}
+	
+	@Test
+	public void testPromovabilitateBoundaryInf() {
+		Grupa grupa = new Grupa(1076);
+		for(int i =0;i<7;i++) {
+			Student student = new Student("Gigel" + i);
+			student.adaugaNota(3);
+			student.adaugaNota(4);
+			student.adaugaNota(5);
+			grupa.adaugaStudent(student);
+		}
+		assertEquals(0.0, grupa.getPromovabilitate(),0.01);
+	}
+	
+	@Test
+	public void testPromovabilitateBoundarySup() {
+		Grupa grupa = new Grupa(1076);
+		for(int i =0;i<5;i++) {
+			Student student = new Student("Ionel" + i);
+			student.adaugaNota(7);
+			student.adaugaNota(7);
+			student.adaugaNota(8);
+			grupa.adaugaStudent(student);
+		}
+		assertEquals(1.0, grupa.getPromovabilitate(),0.01);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testPromovabilitateError() {
+		Grupa grupa = new Grupa(1076);
+		grupa.getPromovabilitate();
+	}
+	
+	
 	
 }
