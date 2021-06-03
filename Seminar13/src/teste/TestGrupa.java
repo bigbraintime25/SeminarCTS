@@ -4,7 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+import categorii.TesteGetPromovabilitate;
+import categorii.TesteNormale;
+import categorii.TesteUrgente;
 import clase.Grupa;
 import clase.Student;
 
@@ -47,12 +51,14 @@ public class TestGrupa {
 	
 	//correct
 	@Test
+	@Category(TesteNormale.class)
 	public void testConstructorExistsLista() {
 		Grupa grupa = new Grupa(1076);
 		assertNotNull(grupa.getStudenti());
 	}
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class, TesteNormale.class})
 	public void testPromovabilitateRight() {
 		Grupa grupa = new Grupa(1076);
 		for(int i =0;i<7;i++) {
@@ -74,6 +80,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class, TesteUrgente.class})
 	public void testPromovabilitateBoundaryInf() {
 		Grupa grupa = new Grupa(1076);
 		for(int i =0;i<7;i++) {
@@ -87,6 +94,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category(TesteGetPromovabilitate.class)
 	public void testPromovabilitateBoundarySup() {
 		Grupa grupa = new Grupa(1076);
 		for(int i =0;i<5;i++) {
@@ -100,6 +108,7 @@ public class TestGrupa {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
+	@Category(TesteUrgente.class)
 	public void testPromovabilitateError() {
 		Grupa grupa = new Grupa(1076);
 		grupa.getPromovabilitate();
